@@ -1,0 +1,41 @@
+//Light up all LED on Adafruit PlayGround
+
+input.buttonA.onEvent(ButtonEvent.Click, function () {
+    light.setAll(0xff0000)
+})
+
+//You start with the input, in this case we use a button input. Nextup we make a function.
+Nextup we fill the funtion to light up all LEDs.
+
+//Servo motor 180
+
+pins.A1.servoWrite
+
+//The only thing that changes here is that u put the servo motor code in instead of the LEDs code. You start with pins.
+Then which pin, this case A1. Then you write it to the servo motor.
+
+//Minigame, try this game and remake it!
+
+input.buttonA.onEvent(ButtonEvent.Click, function () {
+    light2 = 0
+    if (light2 == light.pixelColor(2)) {
+        Speed = 200
+        light.setAll(0xff0000)
+    } else {
+        light.setAll(0x00ff00)
+        Speed += -50
+    }
+})
+let light2 = 0
+let Speed = 0
+Speed = 200
+forever(function () {
+    if (light2 == 10) {
+        light2 = 0
+    }
+    light.clear()
+    light.setPixelColor(light2, 0x00ffff)
+    light2 += 1
+    pause(Speed)
+})
+
